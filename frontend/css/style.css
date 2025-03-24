@@ -1,6 +1,7 @@
 /********** Template CSS **********/
 :root {
-    --primary: #FEA116;;
+    --primary: #FEA116;
+    ;
     --light: #F1F8FF;
     --dark: #0F172B;
 }
@@ -20,22 +21,6 @@
     bottom: 45px;
     z-index: 99;
 }
-
-
-/*** Spinner ***/
-#spinner {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
-    z-index: 99999;
-}
-
-#spinner.show {
-    transition: opacity .5s ease-out, visibility 0s linear 0s;
-    visibility: visible;
-    opacity: 1;
-}
-
 
 /*** Button ***/
 .btn {
@@ -84,7 +69,7 @@
     font-size: 15px;
     text-transform: uppercase;
     outline: none;
-    
+
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
@@ -93,7 +78,7 @@
 }
 
 @media (max-width: 991.98px) {
-    .navbar-dark .navbar-nav .nav-link  {
+    .navbar-dark .navbar-nav .nav-link {
         margin-right: 0;
         padding: 10px 0;
     }
@@ -126,7 +111,7 @@
         position: relative;
         min-height: 450px;
     }
-    
+
     #header-carousel .carousel-item img {
         position: absolute;
         width: 100%;
@@ -145,7 +130,7 @@
     background: rgba(15, 23, 43, .7);
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
 }
 
@@ -423,8 +408,8 @@
 
 .footer {
     position: relative;
-    margin-top: -110px;
-    padding-top: 180px;
+    margin-top: 0px;
+    padding-top: 90px;
 }
 
 .footer .btn.btn-social {
@@ -491,9 +476,7 @@
     border-right: none;
 }
 
-input[type="search"] 
-    
-{
+input[type="search"] {
 
     width: 100%;
 }
@@ -509,23 +492,31 @@ a.btn.btn-sm.btn-dark.rounded.py-2.px-4 {
     display: flex;
 
     position: relative;
-    bottom: 100px;}
+    bottom: 100px;
+}
 
-    .col-lg-5.col-md-12 {
-        position: relative;
-        top: -150px;
-        left: 500px;}
+.col-lg-5.col-md-12 {
+    position: relative;
+    top: -150px;
+    left: 500px;
+}
 
-        .bg-white.shadow {
-            position: relative;
-            bottom: 30px;}
+.bg-white.shadow {
+    position: relative;
+    bottom: 30px;
+}
 
-            .row.gy-5.g-4 {
-                position: relative;
-                right: 500px;
-                top: 150px;}
+.row.gy-5.g-4 {
+    position: relative;
+    right: 500px;
+    top: 150px;
+}
 
-                .text-center.wow.fadeInUp {
-                    position: relative;
-                    top: 25px;}
+.text-center.wow.fadeInUp {
+    position: relative;
+    top: 25px;
+}
 
+.row.g-5.align-items-center {
+    margin-top: 10px;
+}

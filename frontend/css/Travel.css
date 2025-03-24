@@ -1,65 +1,93 @@
-body {
-  background-color: #f7f9f9 ;
-}
-a {
-  color: black;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
-  transition-duration: 0.3s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-ul{
-  list-style: none;
- 
+.gallery-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
 }
 
-/* start header */
-
-.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  align-content: stretch;
-  margin-top: 50px;
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
 }
 
-.container div {
-  width: 28%;
+.gallery-item {
   position: relative;
-  margin: 2%;
   overflow: hidden;
-  border-radius: 10px;
-}
-.container div img {
-  width: 100%;
-  border-radius: 10px;
-  filter: brightness(1);
-  transition-duration: 0.3s;
-  transform: scale(1);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
 
-p {
-  position: absolute;
-  background-color: #ecf0f1;
-  width: 80%;
-  left: 8%;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px;
-  top: 100%;
-  transition-duration: 0.3s;
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: all 0.3s ease;
 }
-.container > div:hover p {
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.7));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: -50px;
+  right: 20px;
+  color: white;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover .image-caption {
+  bottom: 20px;
+}
+
+.checkout-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+
+.gallery-item:hover .checkout-link {
+  opacity: 1;
   top: 50%;
 }
-.container > div:hover img {
-  filter: brightness(0.5);
-  transform: scale(1.2);
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-.container > div > p:hover a {
-  color: #9edf9c;
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
 }

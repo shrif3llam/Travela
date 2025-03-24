@@ -278,3 +278,9 @@ image7.addEventListener("click", () => {
 }
   describtion7.classList.toggle("aber");
 });
+
+
+// كود تعيين خلفية ال landing
+var landBg= document.querySelector("body > div > div.landing-pg > img");
+var goveImg=document.querySelector("body > div > div.item-grid > div.gover-image > img")
+landBg.src=goveImg.src
