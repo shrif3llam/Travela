@@ -1,12 +1,9 @@
 {% load static %}
-{% load custom_tags %}
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title>TRAVELA: Your Best Guide For Hotels-Discovery-Tourist attractions</title>
+    <title>Travela - Your Best Choice</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -38,106 +35,114 @@
 
 <body>
     <div class="container-xxl bg-white p-0">
-        <!-- Header Start -->
+        <!-- Start Header -->
         <div id="header">
             <div class="logo">
-                <a href="url 'home' ">TRAVELA</a>
+                <!-- رابط الصفحة الرئيسية -->
+                <a href="{% url 'home' %}">TRAVELA</a>
             </div>
 
             <nav>
                 <ul class="nav-content">
-                    <li><a href="{% static 'about.html' %}">About</a></li>
-                    <li><a href="{% url 'contact' %}">Contact</a></li>
-                    <li><a href="{% url 'travel' %}">Descover</a></li>
-                    <li><a href="{% url 'booking' %}">Booking</a></li>
+                    <li>
+                        <!-- رابط الصفحة الرئيسية -->
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li>
+                        <!-- رابط صفحة المعلومات عنا -->
+                        <a href="{% url 'about' %}">About</a>
+                    </li>
+                    <li>
+                        <!-- رابط صفحة التواصل معنا -->
+                        <a href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li>
+                        <!-- رابط صفحة المحافظات -->
+                        <a href="{% url 'travel' %}">Descover</a>
+                    </li>
+                    <li>
+                        <!-- رابط صفحة الحجز -->
+                        <a href="{% url 'booking' %}">Booking</a>
+                    </li>
                 </ul>
             </nav>
 
             <!-- نموذج البحث للصفحة -->
-            <form class="search" action="{% static 'search.php' %}">
+            <form class="search" action="{% url 'search' %}">
                 <input name="q" placeholder="Search..." type="search" />
             </form>
         </div>
-        <!-- Header End -->
+        <!-- End Header -->
 
-        <!-- Carousel Start -->
-        <div class="container-fluid p-0 mb-5">
-            <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="w-100" src="{% static 'img/img-corousel/carousel-1.jpg' %}" alt="Carousel Image">
-                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                            <div class="p-3" style="max-width: 700px;">
-                                <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury Living</h6>
-                                <h1 class="display-3 text-white mb-4 animated slideInDown">Discover A Brand Luxurious Hotel</h1>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Rooms</a>
-                                <a href="{% url 'booking' %}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</a>
+        <!-- Page Header Start -->
+        <div class="container-fluid page-header mb-5 p-0" style="background-image: url({% static 'img/img-corousel/carousel-1.jpg' %});">
+            <div class="container-fluid page-header-inner py-5">
+                <div class="container text-center pb-5">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Booking</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Booking</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+        <!-- Booking Start -->
+        <div class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="bg-white shadow" style="padding: 35px;">
+                    <div class="row g-2">
+                        <div class="col-md-10">
+                            <div class="row g-2">
+                                <div class="col-md-3">
+                                    <div class="date" id="date1" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input" placeholder="Check in" data-target="#date1" data-toggle="datetimepicker" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="date" id="date2" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input" placeholder="Check out" data-target="#date2" data-toggle="datetimepicker" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <select class="form-select">
+                                        <option selected>Adult</option>
+                                        <option value="1">Adult 1</option>
+                                        <option value="2">Adult 2</option>
+                                        <option value="3">Adult 3</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <select class="form-select">
+                                        <option selected>Child</option>
+                                        <option value="1">Child 1</option>
+                                        <option value="2">Child 2</option>
+                                        <option value="3">Child 3</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="w-100" src="{% static 'img/img-corousel/carousel-2.jpg' %}" alt="Carousel Image">
-                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                            <div class="p-3" style="max-width: 700px;">
-                                <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Luxury Living</h6>
-                                <h1 class="display-3 text-white mb-4 animated slideInDown">Discover A Brand Luxurious Hotel</h1>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Rooms</a>
-                                <a href="{% url 'booking' %}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Room</a>
-                            </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-primary w-100">Submit</button>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
-        <!-- Carousel End -->
+        <!-- Booking End -->
 
-        <!-- About Start -->
+        <!-- Additional Booking Section -->
         <div class="container-xxl py-5">
             <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6">
-                        <h6 class="section-title text-start text-primary text-uppercase">About Us</h6>
-                        <h1 class="mb-4">Welcome to <span class="text-primary text-uppercase">Travela</span></h1>
-                        <p class="mb-4">We are here to show you the best guide for hotels, discovery, and tourist attractions.</p>
-                        <div class="row g-3 pb-4">
-                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
-                                <div class="border rounded p-1">
-                                    <div class="border rounded text-center p-4">
-                                        <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
-                                        <h2 class="mb-1" data-toggle="counter-up">1500</h2>
-                                        <p class="mb-0">Rooms</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
-                                <div class="border rounded p-1">
-                                    <div class="border rounded text-center p-4">
-                                        <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
-                                        <h2 class="mb-1" data-toggle="counter-up">1560</h2>
-                                        <p class="mb-0">Staffs</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
-                                <div class="border rounded p-1">
-                                    <div class="border rounded text-center p-4">
-                                        <i class="fa fa-users fa-2x text-primary mb-2"></i>
-                                        <h2 class="mb-1" data-toggle="counter-up">1200</h2>
-                                        <p class="mb-0">Clients</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="btn btn-primary py-3 px-5 mt-2" href="">Explore More</a>
-                    </div>
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title text-center text-primary text-uppercase">Room Booking</h6>
+                    <h1 class="mb-5">Book A <span class="text-primary text-uppercase">Luxury Room</span></h1>
+                </div>
+                <div class="row g-5">
                     <div class="col-lg-6">
                         <div class="row g-3">
                             <div class="col-6 text-end">
@@ -154,10 +159,81 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-6">
+                        <div class="wow fadeInUp" data-wow-delay="0.2s">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                            <label for="name">Your Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                            <label for="email">Your Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating date" id="date3" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" id="checkin" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" />
+                                            <label for="checkin">Check In</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating date" id="date4" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" id="checkout" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" />
+                                            <label for="checkout">Check Out</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="select1">
+                                                <option value="1">Adult 1</option>
+                                                <option value="2">Adult 2</option>
+                                                <option value="3">Adult 3</option>
+                                            </select>
+                                            <label for="select1">Select Adult</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="select2">
+                                                <option value="1">Child 1</option>
+                                                <option value="2">Child 2</option>
+                                                <option value="3">Child 3</option>
+                                            </select>
+                                            <label for="select2">Select Child</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="select3">
+                                                <option value="1">Room 1</option>
+                                                <option value="2">Room 2</option>
+                                                <option value="3">Room 3</option>
+                                            </select>
+                                            <label for="select3">Select A Room</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                            <label for="message">Special Request</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- About End -->
+        <!-- Booking End -->
 
 <!-- Room Start -->
 {% load custom_tags %}
@@ -220,78 +296,36 @@
 </div>
 <!-- Room End -->
 
-
-
-
-
-        <!-- Service Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="section-title text-center text-primary text-uppercase">Our Services</h6>
-                    <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Services</span></h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <a class="service-item rounded" href="">
-                            <div class="service-icon bg-transparent border rounded p-1">
-                                <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                    <i class="fa fa-hotel fa-2x text-primary mb-2"></i>
-                                </div>
-                            </div>
-                            <h5 class="mb-3">Rooms & Apartment</h5>
-                            <p class="text-body mb-0">We offer you the best rooms and always ensure your comfort with highest quality and lowest cost.</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                        <a class="service-item rounded" href="">
-                            <div class="service-icon bg-transparent border rounded p-1">
-                                <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                    <i class="fa fa-utensils fa-2x text-primary mb-2"></i>
-                                </div>
-                            </div>
-                            <h5 class="mb-3">Food & Restaurant</h5>
-                            <p class="text-body mb-0">We recommend to you the best restaurants that you can go to and enjoy, along with some instructions, and we also offer you discount coupons.</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <a class="service-item rounded" href="">
-                            <div class="service-icon bg-transparent border rounded p-1">
-                                <div class="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
-                                    <i class="fa fa-glass-cheers fa-2x text-primary mb-2"></i>
-                                </div>
-                            </div>
-                            <h5 class="mb-3">Event & Party</h5>
-                            <p class="text-body mb-0">Since we are always keen on your enjoyment, we offer parties on a daily basis whose first and foremost purpose is enjoyment.</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Service End -->
-
         <!-- Footer Start -->
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-section">
-                    <div class="footer-logo">TRAVELA</div>
+                    <div class="footer-logo">
+                        TRAVELA
+                    </div>
                     <p>Discover the world with our affordable prices and unique travel plans that suit all tastes and budgets.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="{% static 'booking.html' %}"><i class="fas fa-angle-right"></i> Booking</a></li>
-                        <li><a href="{% static 'Travel.html' %}"><i class="fas fa-angle-right"></i> Discover</a></li>
-                        <li><a href="{% static 'about.html' %}"><i class="fas fa-angle-right"></i> About us</a></li>
-                        <li><a href="{% static 'contact.html' %}"><i class="fas fa-angle-right"></i> Contact</a></li>
+                        <li><a href="{% url 'booking' %}"><i class="fas fa-angle-right"></i> Booking</a></li>
+                        <li><a href="{% url 'travel' %}"><i class="fas fa-angle-right"></i> Descover</a></li>
+                        <li><a href="{% url 'about' %}"><i class="fas fa-angle-right"></i> About us</a></li>
+                        <li><a href="{% url 'contact' %}"><i class="fas fa-angle-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact Us</h4>
                     <div class="contact-info">
-                        <div><i class="fas fa-envelope"></i> info@travela.com</div>
-                        <div><i class="fas fa-phone"></i> +1 (555) 123-4567</div>
-                        <div><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Adventure City</div>
+                        <div>
+                            <i class="fas fa-envelope"></i> info@travela.com
+                        </div>
+                        <div>
+                            <i class="fas fa-phone"></i> +1 (555) 123-4567
+                        </div>
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i> 123 Travel Street, Adventure City
+                        </div>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -318,6 +352,7 @@
                     </ul>
                 </div>
             </div>
+
             <div class="copyright">
                 © 2023 Travela. All rights reserved
             </div>
@@ -339,9 +374,6 @@
     <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
     <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
     <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
-
-    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Template Javascript -->
 </body>
-
 </html>
