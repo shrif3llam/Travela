@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ hotel.name }}</title>
+</head>
+<body>
+    <h1>{{ hotel.name }}</h1>
+    {% if hotel.image %}
+    <img src="{{ hotel.image.url }}" alt="Hotel Image">
+{% else %}
+    <p>No image available</p>
+{% endif %}
+    <p><strong>Location:</strong> {{ hotel.city }}</p>
+    <p><strong>Price per Night :</strong> ${{ hotel.price }}</p>
+    <p><strong>Description :</strong> {{ hotel.description }}</p>
+</body>
+</html>

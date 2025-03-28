@@ -1,0 +1,483 @@
+:root {
+  --primary: #FEA116;
+  ;
+  --light: #F1F8FF;
+  --dark: #0F172B;
+}
+
+/* start landig  */
+body {
+  background-color: var(--light);
+  font-family: sans-serif;
+}
+
+@media (min-width: 1080px) {
+  body {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+
+
+.landing-contaner {
+  width: 100%;
+  overflow: hidden;
+  height: 500px;
+  position: relative;
+}
+
+.landing-pg {
+  width: 100%;
+  height: 100%;
+  background: var(--dark);
+  z-index: -1;
+  position: absolute;
+}
+
+.landing-pg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.6;
+  filter: blur(4px);
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  height: 100%;
+  width: 100%;
+  color: var(--light);
+  pad: 10px;
+}
+
+.item-grid div {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.gover-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 5px;
+}
+
+.gover-name {
+  font-size: 70px;
+  opacity: 0;
+  animation: intro-text;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+  animation-timing-function: ease-in;
+  font-family: serif;
+}
+
+.gover-discreption {
+  font-size: 24px;
+  line-height: 1.5;
+  padding: 25px;
+  opacity: 0;
+  animation: intro-text;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+  animation-timing-function: ease-in;
+  font-family: serif;
+}
+
+@keyframes intro-text {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1080px) {
+  .gover-discreption {
+    font-size: 20px;
+  }
+
+}
+
+/* end landing  */
+
+/* start content  */
+
+/* عمل مسافة بين كل سيكشن */
+
+.content {
+  margin: 30px;
+}
+
+/* تهيئة العنوان الرئسي */
+.content .title h1 {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0F172B;
+}
+
+/* تهيئة الحاوية الفرعية */
+.content .landmark {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition-duration: 0.5s;
+  background-color: var(--primary);
+  margin: 30px auto 50px;
+}
+
+.content .landmark #bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease-in-out;
+  /* لتأثير انتقال سلس */
+  opacity: 1;
+  z-index: 0;
+  filter: blur(5px) brightness(0.3);
+  display: none;
+}
+
+
+.content .landmark #bg-image.hidden {
+  opacity: 0;
+}
+
+/* تهيئة عناصر الحاوىة للتعامل معها بشكل اسهل */
+
+.content .landmark>div {
+  height: 150px;
+  width: 150px;
+  border-radius: 20px;
+  position: absolute;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: rgb(0 0 0 / 70%) -6px 6px 3px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transition-duration: 0.5s;
+  overflow: hidden !important;
+  z-index: 1;
+}
+
+/* اعداد الصورة 1 */
+
+.content .landmark .image1 {
+  top: 6%;
+  right: 5%;
+  width: 229px;
+  height: 229px;
+}
+
+/* اعداد الصورة 2 */
+
+.content .landmark .image2 {
+  right: 14%;
+  top: 59%;
+  height: 180px;
+  width: 180px;
+}
+
+/* اعداد الصورة 3 */
+
+.content .landmark .image3 {
+  right: 32%;
+  top: 31%;
+  width: 190px;
+  height: 190px;
+}
+
+/* /* اعداد الصورة 4 */
+
+.content .landmark .image4 {
+  right: 56%;
+  top: 56%;
+  width: 185px;
+  height: 185px;
+}
+
+/* اعداد الصورة 5 */
+
+.content .landmark .image5 {
+  right: 51%;
+  top: 6%;
+  width: 170px;
+  height: 170px;
+}
+
+/* اعداد الصورة 6 */
+
+.content .landmark .image6 {
+  top: 47%;
+  right: 79%;
+  width: 160px;
+  height: 160px;
+}
+
+/* اعداد الصورة 7 */
+
+.content .landmark .image7 {
+  right: 76%;
+  top: 7%;
+}
+
+/* جعل بقية الصور تذهب الي اليمن عند الضغط علي الصورة */
+
+.content .landmark>div.goright {
+  right: calc(100% + 100px);
+}
+
+/* جعل الصورة تغير شكلها عند الضغط عليها */
+
+.content .landmark div.active {
+  width: 45%;
+  height: 400px;
+  right: 30px;
+  top: 50%;
+  transform: translatey(-50%);
+  overflow: hidden;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+}
+
+.content .landmark div.active img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 5px;
+}
+
+.content .landmark div img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 5px;
+}
+
+.content .landmark div.aber {
+  opacity: 1;
+  left: 0;
+  z-index: 100;
+}
+
+.content .landmark .descriotion {
+  width: 50%;
+  height: 100%;
+  border-radius: 0;
+  position: absolute;
+  left: 0;
+  cursor: auto;
+  box-shadow: none;
+  left: -50%;
+  opacity: 0;
+  transition-duration: 0.3;
+  transition-delay: 0.5;
+  color: var(--light);
+}
+
+.content .landmark .descriotion div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.content .landmark .descriotion div p.land-name {
+  font-size: 40px;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-left: 100px;
+  font-family: serif;
+
+}
+
+.content .landmark .descriotion div p.land-des {
+  width: 400px;
+  align-self: flex-start;
+  margin-left: 100px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.content .landmark .descriotion div button {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #ffffff80;
+  text-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: 1px solid #ffffff80;
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+.content .landmark .descriotion div button:hover {
+  color: var(--light);
+  background: var(--primary);
+  border: 1px solid var(--light);
+  text-shadow: 0 0 5px #f7fff7, 0 0 10px #f7fff7, 0 0 20px #f7fff7;
+  box-shadow: 0 0 5px var(--primary), 0 0 20px var(--primary), 0 0 50px var(--primary),
+    0 0 100px var(--primary);
+}
+
+.content .landmark .descriotion div button a {
+  font-size: 18px;
+  color: var(--light);
+}
+
+.hotel-title,
+.restorant-title {
+  padding: 30px;
+
+}
+
+.hotel-title h1,
+.restorant-title h1 {
+  font-size: 50px;
+  text-align: center;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 30px;
+  font-weight: 100;
+}
+
+.hotel-title h1 span,
+.restorant-title h1 span {
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.content .slide-show {
+  position: relative;
+  margin-bottom: 30px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content .slide-show .hotels,
+.content .slide-show .restorants {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.content .slide-show .hotels .hotel,
+.content .slide-show .restorants .restorant {
+  min-width: 33.33%;
+  /* Show three slides at once */
+  box-sizing: border-box;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .slide-show .hotels .hotel img,
+.content .slide-show .restorants .restorant img {
+  width: 100%;
+  border-radius: 10px;
+  transition: filter 0.3s ease-in-out;
+  margin: 5px;
+}
+
+.content .slide-show .hotels .hotel .hotel-b,
+.content .slide-show .restorants .restorant .restorant-b {
+  display: flex;
+  justify-content: space-around;
+}
+
+.content .slide-show .hotels .hotel .hotel-b button,
+.content .slide-show .restorants .restorant .restorant-b button {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #ffffff80;
+  text-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: 1px solid #ffffff80;
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+.content .slide-show .hotels .hotel .hotel-b button:hover,
+.content .slide-show .restorants .restorant .restorant-b button:hover {
+  color: var(--light);
+  background: var(--primary);
+  border: 1px solid var(--light);
+  text-shadow: 0 0 5px var(--light), 0 0 10px var(--light), 0 0 20px var(--light);
+  box-shadow: 0 0 5px var(--primary), 0 0 20px var(--primary), 0 0 50px var(--primary),
+    0 0 100px var(--primary);
+}
+
+
+
+.content .slide-show .hotels .hotel .hotel-b button:hover a,
+.content .slide-show .restorants .restorant .restorant-b button:hover a {
+  color: var(--light);
+}
+
+.content .slide-show .controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.content .slide-show .controls button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: var(--light);
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  outline: none;
+}
+
+.content .slide-show .controls button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+body>div.content>div:nth-child(6) {
+  margin-bottom: 150px;
+}
