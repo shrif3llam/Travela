@@ -29,44 +29,39 @@
 </head>
 
 <body>
-  <!-- start header -->
-  <div id="header">
+   <!-- بدء الهيدر -->
+   <div id="header">
     <div class="logo">
       <!-- رابط الصفحة الرئيسية -->
-      <a href="index.html">TRAVELA</a>
+      <a href="{% url 'home' %}">TRAVELA</a>
     </div>
 
     <nav>
       <ul class="nav-content">
         <li>
-          <!-- رابط الصفحة الرئيسية -->
-          <a href="index.html">Home</a>
+          <a href="{% url 'home' %}">Home</a>
         </li>
         <li>
-          <!-- رابط صفحة المعلومات عنا -->
-          <a href="about.html">About</a>
+          <a href="{% url 'about' %}">About</a>
         </li>
         <li>
-          <!-- رابط صفحة التواصل معنا -->
-          <a href="contact.html">Contact</a>
+          <a href="{% url 'contact' %}">Contact</a>
         </li>
         <li>
-          <!-- رابط صفحة المحافظات  -->
-          <a href="Travel.html">Descover</a>
+          <a href="{% url 'travel' %}">Descover</a>
         </li>
         <li>
-          <!-- رابط صفحة الحجز -->
-          <a href="booking.html">Booking</a>
+          <a href="{% url 'booking' %}">Booking</a>
         </li>
       </ul>
     </nav>
 
     <!-- نموذج البحث للصفحة -->
-    <form class="search" action="search.php">
+    <form class="search" action="{% url 'search' %}">
       <input name="q" placeholder="Search..." type="search" />
     </form>
   </div>
-  <!-- end header -->
+  <!-- انتهاء الهيدر -->
 
   <!-- start landing -->
   <div class="landing-contaner">
